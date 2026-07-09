@@ -1,0 +1,21 @@
+<!doctype html><html lang="es"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FGE Layout Engine</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css"></head><body>
+<main class="app"><aside class="panel">
+<h1>FGE Layout Engine</h1>
+<label>Plantilla</label><select id="templateSelect"></select>
+<label>Cuerpo</label><textarea id="bodyInput"></textarea>
+<label>Firma</label><input id="signatureInput" type="text">
+<label>Fecha</label><input id="dateInput" type="text">
+<div class="actions"><button id="renderBtn">Actualizar</button><button id="downloadPngBtn" class="secondary">Descargar PNG</button><button id="downloadHtmlBtn" class="tertiary">Descargar HTML</button></div>
+<p class="hint">Usa *texto* para negrita. Usa - o • para viñetas, 1. para listas numeradas, > para sangría y >> para doble sangría.</p>
+</aside>
+<section class="stage"><div class="artboard-wrap"><div id="artboard" class="artboard">
+<div id="templateLayer" class="template-layer"></div><div id="extensionLayer" class="extension-layer"></div><div id="barExtension" class="bar-extension"></div>
+<div id="textLayer" class="text-layer"><div id="bodyText"></div><div id="signatureText"></div><div id="dateText"></div></div>
+</div></div></section></main>
+<script src="js/templateStore.js"></script><script src="js/parser.js"></script><script src="js/engine.js"></script><script src="js/exporter.js"></script><script src="js/app.js"></script>
+</body></html>
