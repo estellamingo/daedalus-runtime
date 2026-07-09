@@ -1,10 +1,7 @@
-# FGE Layout Engine v2 · Listas y sangrías
+# Daedalus Engine v3
 
-Marcado soportado:
-- `*texto*` o `**texto**` = negrita
-- `- texto` o `• texto` = viñeta
-- `1. texto` = lista numerada
-- `> texto` = sangría
-- `>> texto` = doble sangría
+Motor de composición gráfica con exportación mejorada para escritorio y móvil.
 
-Abrir `index.html`.
+- Vista previa PNG.
+- Compartir nativo cuando el navegador lo permite.
+- En iPhone, mantener presionada la imagen para guardar en Fotos.

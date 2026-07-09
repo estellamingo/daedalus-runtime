@@ -13,8 +13,8 @@ Durante este periodo deberán considerar:
 >> Este párrafo tiene doble sangría.
 
 Agradecemos su atención y colaboración.`,signature:"DIRECCIÓN ADMINISTRATIVA",date:"24 de junio de 2026"};
-function getCurrentData(){return {body:ui.bodyInput.value,signature:ui.signatureInput.value,date:ui.dateInput.value};}
+function getCurrentData(){return{body:ui.bodyInput.value,signature:ui.signatureInput.value,date:ui.dateInput.value};}
 function populateTemplateSelect(){ui.templateSelect.innerHTML=""; for(const [id,template] of Object.entries(PROJECT_CONFIG.templates)){const option=document.createElement("option"); option.value=id; option.textContent=template.name; ui.templateSelect.appendChild(option);}}
-async function activateTemplate(templateId){ACTIVE_TEMPLATE=PROJECT_CONFIG.templates[templateId]; const rawSVG=await loadTemplateSVG(templateId); setupTemplate(ACTIVE_TEMPLATE, rawSVG); renderContent(ACTIVE_TEMPLATE, getCurrentData());}
+async function activateTemplate(templateId){ACTIVE_TEMPLATE=PROJECT_CONFIG.templates[templateId]; const rawSVG=await loadTemplateSVG(templateId); setupTemplate(ACTIVE_TEMPLATE,rawSVG); renderContent(ACTIVE_TEMPLATE,getCurrentData());}
 async function init(){PROJECT_CONFIG=await loadProjectConfig(); ui.bodyInput.value=sampleData.body; ui.signatureInput.value=sampleData.signature; ui.dateInput.value=sampleData.date; populateTemplateSelect(); await activateTemplate(ui.templateSelect.value); ui.templateSelect.addEventListener("change",e=>activateTemplate(e.target.value)); ui.renderBtn.addEventListener("click",()=>renderContent(ACTIVE_TEMPLATE,getCurrentData())); ui.bodyInput.addEventListener("input",()=>renderContent(ACTIVE_TEMPLATE,getCurrentData())); ui.signatureInput.addEventListener("input",()=>renderContent(ACTIVE_TEMPLATE,getCurrentData())); ui.dateInput.addEventListener("input",()=>renderContent(ACTIVE_TEMPLATE,getCurrentData())); ui.downloadPngBtn.addEventListener("click",()=>downloadGeneratedPNG(ACTIVE_TEMPLATE)); ui.downloadHtmlBtn.addEventListener("click",downloadGeneratedHTML);}
 document.fonts.ready.then(init);
