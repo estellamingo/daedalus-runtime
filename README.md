@@ -1,9 +1,22 @@
-# Daedalus Engine v4 · Decoupled Exporter
+# Daedalus Engine v5 · Stable
 
-Exporter desacoplado del motor principal.
+Versión estable para escritorio y móvil.
 
-- `js/core/`: layout, parser y template store.
-- `js/exporters/exporter.js`: módulo de exportación.
-- PNG con `html-to-image`.
-- Fallback interno si la librería falla.
-- Modal de vista previa para escritorio y móvil.
+## Mejoras
+
+- Encabezado fijo convertido a curvas:
+  - COMUNICADO
+  - logotipo FGE
+  - elementos gráficos
+- Solo permanecen dinámicos:
+  - cuerpo
+  - firma
+  - fecha
+- Exporter v2 desacoplado:
+  - incrustación de fuentes dinámicas cuando el navegador lo permite;
+  - escala optimizada para iPhone/iPad;
+  - fallback automático;
+  - vista previa;
+  - descarga;
+  - abrir imagen;
+  - compartir mediante el menú nativo.
