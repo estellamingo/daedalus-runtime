@@ -1,15 +1,19 @@
 <!doctype html><html lang="es"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Daedalus Studio v5.1</title>
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>Daedalus Studio v5.2</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;800;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/styles.css"></head><body>
-<main class="app"><aside class="panel"><h1>Daedalus Studio <small>v5.1</small></h1>
+<link rel="stylesheet" href="css/styles.css?v=5.2.0"></head><body>
+<main class="app"><aside class="panel"><h1>Daedalus Studio <small>v5.2</small></h1>
 <label>Plantilla</label><select id="templateSelect"></select>
 <label>Cuerpo</label><textarea id="bodyInput"></textarea>
 <label>Firma</label><input id="signatureInput" type="text">
 <label>Fecha</label><input id="dateInput" type="text">
 <div class="actions"><button id="renderBtn">Actualizar</button><button id="exportPngBtn" class="secondary">Generar PNG</button><button id="downloadHtmlBtn" class="tertiary">Descargar HTML</button></div>
+<div id="startupStatus" class="startup-status">Iniciando motor…</div>
 <p class="hint">Usa *texto* para negrita. Usa - o • para viñetas, 1. para listas numeradas, > para sangría y >> para doble sangría.</p>
 </aside><section class="stage"><div class="artboard-wrap"><div id="artboard" class="artboard">
 <div id="templateLayer" class="template-layer"></div><div id="extensionLayer" class="extension-layer"></div><div id="barExtension" class="bar-extension"></div>
@@ -22,5 +26,5 @@
 <div id="exportStatus" class="export-status"></div><div id="exportImageWrap" class="export-image-wrap"></div>
 </div></div>
 <script src="https://cdn.jsdelivr.net/npm/html-to-image@1.11.11/dist/html-to-image.min.js"></script>
-<script src="js/core/templateStore.js"></script><script src="js/core/parser.js"></script><script src="js/core/engine.js"></script><script src="js/exporters/exporter.js"></script><script src="js/app.js"></script>
+<script src="js/core/templateStore.js?v=5.2.0"></script><script src="js/core/parser.js?v=5.2.0"></script><script src="js/core/engine.js?v=5.2.0"></script><script src="js/exporters/exporter.js?v=5.2.0"></script><script src="js/app.js?v=5.2.0"></script>
 </body></html>

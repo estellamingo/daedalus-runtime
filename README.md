@@ -1,14 +1,17 @@
-# Daedalus Engine v5.1
+# Daedalus Engine v5.2 · Cache Fix
 
-Corrección de la versión móvil.
+Corrección para dispositivos que mezclaban archivos nuevos y antiguos de GitHub Pages.
 
 ## Cambios
 
-- `templateStore.js` reconstruido desde cero para evitar errores de sintaxis.
-- El SVG del encabezado usa curvas, por lo que COMUNICADO y el logo no dependen de fuentes del dispositivo.
-- Recupera la carga automática de:
-  - plantilla;
-  - texto de ejemplo;
-  - firma;
-  - fecha.
-- Mantiene el Exporter desacoplado de la versión v4, que ya funcionaba en iPhone y escritorio.
+- Versionado de CSS y JavaScript mediante `?v=5.2.0`.
+- Metadatos para reducir el uso de caché del navegador.
+- Estado visible de inicialización:
+  - Iniciando motor.
+  - Motor listo.
+  - Mensaje de error, si un archivo no carga.
+- Mantiene:
+  - encabezado en curvas;
+  - funcionamiento móvil;
+  - Exporter desacoplado;
+  - vista previa y compartir PNG.

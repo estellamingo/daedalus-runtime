@@ -1,1 +1,1 @@
-Daedalus Engine v5.1 - Mobile initialization fix + vector header
+Daedalus Engine v5.2 - Cross-device cache fix

@@ -17,4 +17,28 @@ function getCurrentData(){return{body:ui.bodyInput.value,signature:ui.signatureI
 function populateTemplateSelect(){ui.templateSelect.innerHTML="";for(const[id,t]of Object.entries(PROJECT_CONFIG.templates)){const o=document.createElement("option");o.value=id;o.textContent=t.name;ui.templateSelect.appendChild(o)}}
 async function activateTemplate(id){ACTIVE_TEMPLATE=PROJECT_CONFIG.templates[id];setupTemplate(ACTIVE_TEMPLATE,await loadTemplateSVG(id));renderContent(ACTIVE_TEMPLATE,getCurrentData())}
 async function init(){PROJECT_CONFIG=await loadProjectConfig();ui.bodyInput.value=sampleData.body;ui.signatureInput.value=sampleData.signature;ui.dateInput.value=sampleData.date;populateTemplateSelect();await activateTemplate(ui.templateSelect.value);ui.templateSelect.addEventListener("change",e=>activateTemplate(e.target.value));ui.renderBtn.addEventListener("click",()=>renderContent(ACTIVE_TEMPLATE,getCurrentData()));ui.bodyInput.addEventListener("input",()=>renderContent(ACTIVE_TEMPLATE,getCurrentData()));ui.signatureInput.addEventListener("input",()=>renderContent(ACTIVE_TEMPLATE,getCurrentData()));ui.dateInput.addEventListener("input",()=>renderContent(ACTIVE_TEMPLATE,getCurrentData()));ui.exportPngBtn.addEventListener("click",()=>DaedalusExporter.generatePNG(ACTIVE_TEMPLATE));ui.downloadHtmlBtn.addEventListener("click",()=>DaedalusExporter.downloadHTML())}
-document.fonts.ready.then(init);
+window.addEventListener("error", event => {
+  const status = document.getElementById("startupStatus");
+  if (status) {
+    status.textContent = "Error al iniciar: " + (event.message || "archivo no cargado");
+    status.classList.add("error");
+  }
+});
+
+document.fonts.ready
+  .then(init)
+  .then(() => {
+    const status = document.getElementById("startupStatus");
+    if (status) {
+      status.textContent = "Motor listo · v5.2";
+      status.classList.add("ready");
+    }
+  })
+  .catch(error => {
+    console.error(error);
+    const status = document.getElementById("startupStatus");
+    if (status) {
+      status.textContent = "No se pudo iniciar el motor: " + error.message;
+      status.classList.add("error");
+    }
+  });
