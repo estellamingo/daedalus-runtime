@@ -1,7 +1,9 @@
-# Daedalus Engine v3
+# Daedalus Engine v4 · Decoupled Exporter
 
-Motor de composición gráfica con exportación mejorada para escritorio y móvil.
+Exporter desacoplado del motor principal.
 
-- Vista previa PNG.
-- Compartir nativo cuando el navegador lo permite.
-- En iPhone, mantener presionada la imagen para guardar en Fotos.
+- `js/core/`: layout, parser y template store.
+- `js/exporters/exporter.js`: módulo de exportación.
+- PNG con `html-to-image`.
+- Fallback interno si la librería falla.
+- Modal de vista previa para escritorio y móvil.
