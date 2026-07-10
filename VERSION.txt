@@ -1,1 +1,1 @@
-Daedalus Engine v5 - Stable Vector Header + Exporter v2
+Daedalus Engine v5.1 - Mobile initialization fix + vector header

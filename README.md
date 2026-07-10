@@ -1,22 +1,14 @@
-# Daedalus Engine v5 · Stable
+# Daedalus Engine v5.1
 
-Versión estable para escritorio y móvil.
+Corrección de la versión móvil.
 
-## Mejoras
+## Cambios
 
-- Encabezado fijo convertido a curvas:
-  - COMUNICADO
-  - logotipo FGE
-  - elementos gráficos
-- Solo permanecen dinámicos:
-  - cuerpo
-  - firma
-  - fecha
-- Exporter v2 desacoplado:
-  - incrustación de fuentes dinámicas cuando el navegador lo permite;
-  - escala optimizada para iPhone/iPad;
-  - fallback automático;
-  - vista previa;
-  - descarga;
-  - abrir imagen;
-  - compartir mediante el menú nativo.
+- `templateStore.js` reconstruido desde cero para evitar errores de sintaxis.
+- El SVG del encabezado usa curvas, por lo que COMUNICADO y el logo no dependen de fuentes del dispositivo.
+- Recupera la carga automática de:
+  - plantilla;
+  - texto de ejemplo;
+  - firma;
+  - fecha.
+- Mantiene el Exporter desacoplado de la versión v4, que ya funcionaba en iPhone y escritorio.
